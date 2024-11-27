@@ -3,10 +3,13 @@
   --main-bg: #2a3447;
   --soft-bg: #384256;
   --dark-bg: #222b3c;
+
   //TEXT
   --main-color: white;
   --soft-color: #ddd;
   --dark-color: #2a3447;
+
+  --check: 1px solid hotpink;
 }
 
 *,
@@ -46,7 +49,8 @@ a {
   align-items: center;
   justify-content: space-between;
   padding-block: 1rem;
-  padding-inline: 1rem;
+  padding-inline: 1.5rem;
+  margin-bottom: 4rem;
 
 }
 
@@ -64,7 +68,7 @@ a {
 .nav-icons {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.4rem;
 }
 
 .notifications {
@@ -111,18 +115,60 @@ a {
 .content-menu-wrapper {
   display: grid;
   grid-template-columns: 0.5fr 2fr;
+
   .menu {
-    // max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
     border-right: 1px solid var(--soft-bg);
     padding-block: 1rem;
     padding-inline: 2rem;
   }
-
+  
   .main-content {
-
+    
     padding-block: 1rem;
     padding-inline: 2rem;
   }
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  h3 {
+    opacity: 0.7;
+  }
+}
+
+.menu-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.menu-one-item {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  gap: 0.5rem;
+
+  padding: 1rem;
+
+  span {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color:  var(--soft-bg);
+    
+  }
+
 }
 
 footer {
@@ -132,4 +178,6 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+
+  padding-block: 3rem;
 }

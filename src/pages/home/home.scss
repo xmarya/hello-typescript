@@ -1,5 +1,49 @@
-
-
 .home-page {
-    
+  border: var(--check);
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, mimax(18rem, auto));
+  gap: 2rem;
+}
+
+.top-deals,
+.totals,
+.analytics,
+.lead-by,
+.visits,
+.profit {
+  border: 1px solid var(--soft-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.top-deals {
+  grid-column: 1 / 2;
+  grid-row: span 3;
+}
+
+.visits {
+  grid-column: 1 / 2;
+  grid-row: span 2;
+}
+
+.totals {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.analytics {
+  grid-column: 2 / span 2;
+  grid-row-start: 3;
+  grid-row-end: 6;
+}
+
+.lead-by {
+  grid-column: 4 / 5;
+  grid-row: 1 / span 3;
+}
+
+.profit {
+  grid-row: span 2;
 }

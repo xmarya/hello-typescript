@@ -22,28 +22,27 @@ type DataKeys = {
   colour: string;
 };
 
-type Details = {
+type Details<Key extends string> = {
   day: "Sun" | "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat";
   visits: number;
-  orders: number;
-};
+} & {[key in Key]: number};
 
 type Activities = {
   text: string;
   time: string;
 };
 
-type OneChart = {
+export type OneChart<Key extends string> = {
   datakeys:DataKeys[];
-  data: Details[];
+  data: Details<Key>[];
 }
 
-export type SingleProduct = {
+export type SingleProduct<Key extends string> = {
   id: number;
   img: string;
   title: string;
   info: ProductInfo;
-  chart: OneChart,
+  chart: OneChart<Key>,
   activities:Activities[]
 };
 
@@ -150,7 +149,7 @@ export const products: Products[] = [
   },
 ];
 
-export const singleProduct:SingleProduct = {
+export const singleProduct:SingleProduct<"orders"> = {
   id: 1,
   title: "Playstation 5 Digital Edition",
   img: "https://store.sony.com.au/on/demandware.static/-/Sites-sony-master-catalog/default/dw1b537bbb/images/PLAYSTATION5W/PLAYSTATION5W.png",

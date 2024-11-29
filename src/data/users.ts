@@ -1,20 +1,42 @@
+import { Activities, OneChart } from "./products";
+
 export type Users = {
   id: number;
   img: string;
-  lastName:string,
-  firstName:string,
-  email:string,
-  phone:string,
-  createdAt:string,
-  verified: boolean,
+  lastName: string;
+  firstName: string;
+  email: string;
+  phone: string;
+  createdAt: string;
+  verified: boolean;
 };
 
-export type TopUser = Omit<Users, "lastName" | "firstName" | "phone"| "" | "createdAt" | "verified"> & {
-  username:string,
-  amount:string
-}
+export type TopUser = Omit<
+  Users,
+  "lastName" | "firstName" | "phone" | "" | "createdAt" | "verified"
+> & {
+  username: string;
+  amount: string;
+};
 
-export const userRows:Users[] = [
+type UserInfo = {
+  username: string;
+  fullname: string;
+  email: string;
+  phone: string;
+  emailStatus: "verified" | "unverified";
+};
+
+type SingleUser<Key extends string> = {
+  id: number;
+  fullName: string;
+  img: string;
+  info: UserInfo;
+  chart: OneChart<Key>;
+  activities: Activities[];
+};
+
+export const userRows: Users[] = [
   {
     id: 1,
     img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
@@ -63,6 +85,7 @@ export const userRows:Users[] = [
     email: "gobtagbes@yahoo.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false
   },
   {
     id: 6,
@@ -82,6 +105,7 @@ export const userRows:Users[] = [
     email: "reso.bilic@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false
   },
   {
     id: 8,
@@ -101,6 +125,7 @@ export const userRows:Users[] = [
     email: "uzozor@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false
   },
   {
     id: 10,
@@ -130,6 +155,7 @@ export const userRows:Users[] = [
     email: "tic.harvey@hotmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false
   },
   {
     id: 13,
@@ -139,6 +165,7 @@ export const userRows:Users[] = [
     email: "ceuc@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false
   },
   {
     id: 14,
@@ -148,6 +175,7 @@ export const userRows:Users[] = [
     email: "bafuv@hotmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false
   },
   {
     id: 15,
@@ -157,10 +185,11 @@ export const userRows:Users[] = [
     email: "ubi@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
+    verified: false
   },
 ];
 
-export const topDealUsers:TopUser[] = [
+export const topDealUsers: TopUser[] = [
   {
     id: 1,
     img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
@@ -212,17 +241,16 @@ export const topDealUsers:TopUser[] = [
   },
 ];
 
- 
-export const singleUser = {
+export const singleUser: SingleUser<"clicks"> = {
   id: 1,
-  title: "John Doe",
+  fullName: "John Doe",
   img: "https://images.pexels.com/photos/17397364/pexels-photo-17397364.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
   info: {
     username: "Johndoe99",
     fullname: "John Doe",
     email: "johndoe@gmail.com",
     phone: "123 456 789",
-    status: "verified",
+    emailStatus: "verified",
   },
   chart: {
     datakeys: [
@@ -231,37 +259,37 @@ export const singleUser = {
     ],
     data: [
       {
-        name: "Sun",
+        day: "Sun",
         visits: 4000,
         clicks: 2400,
       },
       {
-        name: "Mon",
+        day: "Mon",
         visits: 3000,
         clicks: 1398,
       },
       {
-        name: "Tue",
+        day: "Tue",
         visits: 2000,
         clicks: 3800,
       },
       {
-        name: "Wed",
+        day: "Wed",
         visits: 2780,
         clicks: 3908,
       },
       {
-        name: "Thu",
+        day: "Thu",
         visits: 1890,
         clicks: 4800,
       },
       {
-        name: "Fri",
+        day: "Fri",
         visits: 2390,
         clicks: 3800,
       },
       {
-        name: "Sat",
+        day: "Sat",
         visits: 3490,
         clicks: 4300,
       },

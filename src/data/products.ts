@@ -27,7 +27,7 @@ type Details<Key extends string> = {
   visits: number;
 } & {[key in Key]: number};
 
-type Activities = {
+export type Activities = {
   text: string;
   time: string;
 };

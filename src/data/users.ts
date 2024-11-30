@@ -1,4 +1,4 @@
-import { Activities, OneChart } from "./products";
+import { Activities, OneChart } from "./globals";
 
 export type Users = {
   id: number;

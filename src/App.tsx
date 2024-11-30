@@ -3,6 +3,7 @@ import Home from "./pages/home/Home";
 import Users from "./pages/users/Users";
 import Products from "./pages/products/Products";
 import AppLayout from "./components/AppLayout";
+import TicTacToe from "./pages/tic-tac-toe/TicTacToe";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,12 @@ const router = createBrowserRouter([
         path: "/products",
         element: <Products />,
       },
+      
     ],
+  },
+  {
+    path: "/ttt",
+    element: <TicTacToe />,
   },
 ]);
 

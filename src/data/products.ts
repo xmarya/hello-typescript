@@ -1,3 +1,5 @@
+import { Activities, OneChart } from "./globals";
+
 export type Products = {
   id: number;
   img: string;
@@ -17,25 +19,8 @@ type ProductInfo = {
   export: string;
 };
 
-type DataKeys = {
-  name: string;
-  colour: string;
-};
 
-type Details<Key extends string> = {
-  day: "Sun" | "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat";
-  visits: number;
-} & {[key in Key]: number};
 
-export type Activities = {
-  text: string;
-  time: string;
-};
-
-export type OneChart<Key extends string> = {
-  datakeys:DataKeys[];
-  data: Details<Key>[];
-}
 
 export type SingleProduct<Key extends string> = {
   id: number;

@@ -16,7 +16,7 @@ interface Items {
   Type '{ title: string; items: { label: string; link: string; icon: string; }[]; }[]'
    is missing the following properties from type 'List': title, items
 
-   it's due to that the menu list is actuallu and array of object containg List, so I had to change its type from one single List to be array of Lists
+   it's due to that the menu list is actually and array of object containg List, so I had to change its type from one single List to be array of Lists
     */
 export const menuList: List[] = [
   {

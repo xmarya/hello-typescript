@@ -181,3 +181,34 @@ footer {
 
   padding-block: 3rem;
 }
+
+
+// Tic-Tac-Toe //
+
+.board {
+  background-color: var(--soft-color);
+  display: grid;
+  width: 35rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 10rem);
+  // margin-top: 10rem;
+  margin-inline: auto;
+}
+
+.square {
+  font-size: 2rem;
+  border: 1px solid var(--main-bg);
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.o {
+  color: crimson;
+}
+
+.x {
+  color: royalblue;
+}

@@ -3,14 +3,13 @@
   border: var(--check);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(180px, auto);
+  grid-auto-rows: minmax(18rem, auto);
   grid-auto-flow: dense;
   gap: 2rem;
 
 }
 
 .top-deals,
-.totals,
 .analytics,
 .lead-by,
 .visits,
@@ -22,7 +21,7 @@
 
 .top-deals {
   grid-column: 1 / 2;
-  grid-row: span 3;
+  grid-row: span 2;
 }
 
 .visits {
@@ -39,7 +38,6 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 1.5rem;
 
-  padding: 0;
 
   &> * {
     border: 1px solid var(--soft-bg);
@@ -52,15 +50,16 @@
 .analytics {
   grid-column: 2 / span 2;
   grid-row-start: 3;
-  grid-row-end: 6;
+  grid-row-end: 5;
 }
 
 .lead-by {
   grid-column: 4 / 5;
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 2;
 }
 
 .profit {
+  grid-column-end: -1;
   grid-row: span 2;
 }
 

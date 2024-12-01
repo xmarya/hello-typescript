@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useEffect } from "react";
 
 type Props = {
     value:string | null,
@@ -9,6 +9,9 @@ type Props = {
 
 function SquareComponent({value, winner, onClick}:Props, ref: React.ForwardedRef<HTMLButtonElement>) {
 
+    useEffect(() => {
+        console.log("square re-render");
+    }, []);
     return (
         <button ref={ref} disabled={value !== null || Boolean(winner)} className={`square`} onClick={onClick}/>
     )

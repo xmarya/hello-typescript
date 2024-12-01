@@ -44,6 +44,7 @@ export default function TicTacToe() {
   const [winner, setWinner] = useState<Player>(null);
 
   useEffect(() => {
+    console.log("board re-render");
     const winner = winPattrens(squares);
     if (winner) setWinner(winner);
     if (!winner && squares.every((sq) => sq !== null)) setWinner("Draw");

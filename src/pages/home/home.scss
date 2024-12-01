@@ -1,10 +1,12 @@
+
 .home-page {
   border: var(--check);
-  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, mimax(18rem, auto));
+  grid-auto-rows: minmax(180px, auto);
+  grid-auto-flow: dense;
   gap: 2rem;
+
 }
 
 .top-deals,
@@ -31,6 +33,20 @@
 .totals {
   grid-column: 2 / span 2;
   grid-row: 1 / span 2;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  padding: 0;
+
+  &> * {
+    border: 1px solid var(--soft-bg);
+    border-radius: 1rem;
+    padding: 1.2rem;
+  }
+
 }
 
 .analytics {
@@ -46,4 +62,352 @@
 
 .profit {
   grid-row: span 2;
+}
+
+
+.topBox {
+  h1 {
+    margin-bottom: 20px;
+
+    
+  }
+
+  .list {
+    .listItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+
+      .user {
+        display: flex;
+        gap: 0.5rem;
+
+        .mini-photo {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 100%;
+          object-fit: cover;
+          display: block;
+          // 
+          // 
+        }
+
+        .userTexts {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .username {
+            font-size: 14px;
+            font-weight: 500;
+          }
+          .email {
+            font-size: 12px;
+
+            
+            
+          }
+        }
+      }
+
+      .amount {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+
+.single {
+  display: flex;
+
+  .view {
+    flex: 1;
+
+    .info {
+      .topInfo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 20px;
+          object-fit: cover;
+        }
+
+        h1 {
+          font-weight: 500;
+        }
+      }
+      .details {
+        font-size: 18px;
+
+        .item {
+          margin: 30px 0px;
+
+          .itemTitle {
+            font-weight: 600;
+            margin-right: 10px;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+
+    hr {
+      width: 90%;
+      height: 0;
+      border: 0.5px solid gray;
+      margin: 20px 0px;
+
+      
+    }
+
+    .chart {
+      margin-top: 50px;
+      width: 80%;
+      height: 400px;
+
+      
+    }
+  }
+  .activities {
+    flex: 1;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      li {
+        list-style-type: none;
+        position: relative;
+        width: 1px;
+        padding-top: 50px;
+        background-color: #f45b69;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #f45b69;
+          transform: translateX(-50%);
+        }
+
+        div {
+          min-width: 480px;
+          padding: 15px;
+          background-color: #f45b6810;
+
+          
+
+          p{
+            margin-bottom: 5px;
+          }
+
+          time{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.pieChartBox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+  .chart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+
+      .title {
+        display: flex;
+        gap: 1px;
+        align-items: center;
+
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+
+.chartBox {
+  display: flex;
+  // height: 100%;
+
+  
+
+  .boxInfo {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      
+    }
+
+  }
+
+  .chartInfo {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .chart {
+      width: 100%;
+      height: 100%;
+    }
+
+    .texts {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+
+      .percentage {
+        font-weight: bold;
+        font-size: 20px;
+
+        
+      }
+
+      .duration{
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+
+.bigChartBox{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .chart{
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.barChartBox{
+  width: 100%;
+  height: 100%;
+
+  h1{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .chart{
+  }
+}
+
+
+.add {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.724);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    padding: 50px;
+    border-radius: 10px;
+    background-color: var(--main-bg);
+    position: relative;
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 24px;
+      color: var(--soft-color);
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 500px;
+      justify-content: space-between;
+
+      .item {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        label {
+          font-size: 14px;
+        }
+
+        input {
+          padding: 10px;
+          background-color: transparent;
+          color: white;
+          outline: none;
+          border: 1px solid var(--soft-color);
+          border-radius: 3px;
+        }
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+  }
 }

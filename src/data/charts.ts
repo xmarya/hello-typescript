@@ -121,38 +121,38 @@ export type ChartBriefData<Key extends string> = Omit<ChartFullData<Key>, "numbe
     ],
   };
   
-  export const barChartBoxVisit:ChartBriefData<"visit"> = {
+  export const barChartBoxVisits:ChartBriefData<"visits"> = {
     title: "Total Visit",
     colour: "#FF8042",
-    datakey: "visit",
+    datakey: "visits",
     data: [
       {
         day: "Sun",
-        visit: 4000,
+        visits: 4000,
       },
       {
         day: "Mon",
-        visit: 3000,
+        visits: 3000,
       },
       {
         day: "Tue",
-        visit: 2000,
+        visits: 2000,
       },
       {
         day: "Wed",
-        visit: 2780,
+        visits: 2780,
       },
       {
         day: "Thu",
-        visit: 1890,
+        visits: 1890,
       },
       {
         day: "Fri",
-        visit: 2390,
+        visits: 2390,
       },
       {
         day: "Sat",
-        visit: 3490,
+        visits: 3490,
       },
     ],
   };

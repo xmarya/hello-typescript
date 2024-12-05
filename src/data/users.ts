@@ -36,7 +36,7 @@ type SingleUser<Key extends string> = {
   activities: Activities[];
 };
 
-export const userRows: Users[] = [
+const usersData: Users[] = [
   {
     id: 1,
     img: "https://images.pexels.com/photos/8405873/pexels-photo-8405873.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
@@ -85,7 +85,7 @@ export const userRows: Users[] = [
     email: "gobtagbes@yahoo.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
-    verified: false
+    verified: false,
   },
   {
     id: 6,
@@ -105,7 +105,7 @@ export const userRows: Users[] = [
     email: "reso.bilic@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
-    verified: false
+    verified: false,
   },
   {
     id: 8,
@@ -125,7 +125,7 @@ export const userRows: Users[] = [
     email: "uzozor@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
-    verified: false
+    verified: false,
   },
   {
     id: 10,
@@ -155,7 +155,7 @@ export const userRows: Users[] = [
     email: "tic.harvey@hotmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
-    verified: false
+    verified: false,
   },
   {
     id: 13,
@@ -165,7 +165,7 @@ export const userRows: Users[] = [
     email: "ceuc@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
-    verified: false
+    verified: false,
   },
   {
     id: 14,
@@ -175,7 +175,7 @@ export const userRows: Users[] = [
     email: "bafuv@hotmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
-    verified: false
+    verified: false,
   },
   {
     id: 15,
@@ -185,7 +185,7 @@ export const userRows: Users[] = [
     email: "ubi@gmail.com",
     phone: "123 456 789",
     createdAt: "01.02.2023",
-    verified: false
+    verified: false,
   },
 ];
 
@@ -322,3 +322,30 @@ export const singleUser: SingleUser<"clicks"> = {
     },
   ],
 };
+
+export function getAllUsers(): Array<Users> {
+  const users = [...usersData];
+
+  return users;
+}
+export function addUser(
+  user: Omit<Users, "id" | "img" | "createdAt" | "verified">
+) {
+  const newUser = {
+    ...user,
+    id: usersData.length + 1,
+    createdAt: "today",
+    img: "/noavatar.png",
+    verified: false,
+  };
+  usersData.push(newUser);
+  // console.log(Object.isExtensible(usersData));
+  // console.log(Object.isFrozen(usersData));
+  console.log("new user", usersData[usersData.length - 1]);
+}
+
+export function deleteUser(userId: number) {
+  console.log("here is handle dee", userId);
+  const deleted = usersData.filter((user) => user.id !== userId);
+  console.log(deleted);
+}
